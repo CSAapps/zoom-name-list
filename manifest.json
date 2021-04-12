@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+
+    "name": "Zoom Attendence",
+    "description": "Get name list with Zoom meeting participants",
+    "version": "1.0",
+    "author": "CSA Apps",
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+
+    "icons": { "48": "icon.png" }
+}
