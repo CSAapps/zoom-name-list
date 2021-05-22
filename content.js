@@ -22,7 +22,9 @@ var names = ul.querySelectorAll('.participants-item__display-name');
 
 list = "";
 for (var i = 0; i < names.length; i++)
-    list += `${i+1}. ${names[i].textContent}\n`
+    list += `${names[i].textContent}\n`
+
+list += `\nTotal: ${names.length}`;
 
 filename = `${document.title} ${(new Date().toLocaleString()).replace(/\/|\:/g,'-')}.txt`
 
