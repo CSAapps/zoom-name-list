@@ -20,6 +20,8 @@ function save(textToWrite, fileNameToSaveAs) {
 var ul = document.querySelector('ul.participants-ul');
 var names = ul.querySelectorAll('.participants-item__display-name');
 
+names = names.filter(name => name.textContent != "Chandani Miss");
+
 list = "";
 for (var i = 0; i < names.length; i++)
     list += `${names[i].textContent}\n`
