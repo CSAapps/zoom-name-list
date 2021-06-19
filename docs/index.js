@@ -31,8 +31,8 @@ function showList() {
             let time = new Date(parseInt(millis));
             let li = document.createElement('li');
             li.innerHTML =
-                `<span class="time">${time.toLocaleTimeString()}\
-                 </span>&nbsp;|&nbsp;\
+                `<td class="time">${time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\
+                 </td>&nbsp;|&nbsp;\
                  <span class="count">${counts[millis]}</span>`;
 
             li.millis = millis;

@@ -14,7 +14,13 @@ chrome.runtime.onMessage.addListener(function(data) {
     updates['names/' + key] = data.names;
     // updates['titles/' + key] = data.title;
 
-    db.update(updates);
+    db.update(updates, (error) => {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log("saved");
+        }
+    });
 
     console.log(updates);
 });
