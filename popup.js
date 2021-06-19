@@ -12,7 +12,7 @@ chrome.runtime.onMessage.addListener(function(data) {
     var updates = {};
     updates['counts/' + key] = data.names.length;
     updates['names/' + key] = data.names;
-    updates['titles/' + key] = data.title;
+    // updates['titles/' + key] = data.title;
 
     db.update(updates);
 
