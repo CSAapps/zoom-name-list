@@ -16,9 +16,9 @@
 // };
 
 var data = {
-    "date": Date.now(),
+    "date": Date.now() + 1000 * 60 * 60 * 300,
     "title": "My title",
-    "names": ["name1", "name2", "name3"]
+    "names": ["a", "b", "c", "d"]
 };
 
 chrome.runtime.sendMessage(data);

@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zoom Attendance</title>
 </head>
 
 <body>
+    <table>
+        <tr>
+            <td>
+                <ul id="ul-main"></ul>
+            </td>
+            <td>
+                <div id="div-names" style="white-space: pre;"></div>
+            </td>
+        </tr>
+
+    </table>
+
 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="db-init.js"></script>
-
-
-    <script>
-        console.log(db);
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
