@@ -26,7 +26,8 @@ list = "";
 for (var i = 0; i < names.length; i++)
     list += `${names[i].textContent}\n`
 
-var date = new Date().toLocaleString();
+var date = new Date().toLocaleString('en-GB', { hour12: true }).toUpperCase();
+
 list = date + '\n\n' + list + `\nTotal: ${names.length}`;
 
 filename = `${document.title} ${date.replace(/\/|\:/g,'-')}.txt`
