@@ -1,0 +1,30 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table {}
+
+td {
+    vertical-align: top;
+}
+
+.count {
+    color: #f52664;
+    font-weight: 800;
+}
+
+.date {
+    color: #127e81;
+    font-weight: 600;
+}
+
+.time {
+    color: #6365ec;
+}
+
+#div-names {
+    white-space: pre;
+    padding-left: 7vw;
+    color: #127e81;
+    font-weight: 600;
+}

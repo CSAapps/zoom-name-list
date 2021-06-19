@@ -22,6 +22,7 @@ function showList() {
     datesArr.reverse();
     datesArr.forEach(date => {
         let liDate = document.createElement('li');
+        liDate.className = 'date';
         let ul = document.createElement('ul');
         liDate.innerText = date;
         let times = dates[date];
@@ -29,7 +30,11 @@ function showList() {
         times.forEach(millis => {
             let time = new Date(parseInt(millis));
             let li = document.createElement('li');
-            li.innerText = time.toLocaleTimeString() + " | " + counts[millis];
+            li.innerHTML =
+                `<span class="time">${time.toLocaleTimeString()}\
+                 </span>&nbsp;|&nbsp;\
+                 <span class="count">${counts[millis]}</span>`;
+
             li.millis = millis;
             li.onclick = function() {
                 loadNames(this.millis);
@@ -44,11 +49,12 @@ function showList() {
 }
 
 function loadNames(millis) {
-    divNames.textContent = "Loading . . .";
+    divNames.textContent = "\nLoading . . .";
     db.child('names').child(millis).get().then((snapshot) => {
         if (snapshot.exists()) {
             let names = snapshot.val();
-            let list = new Date(parseInt(millis)).toLocaleString('en-GB', { hour12: true }).toUpperCase();
+            let list = '\n';
+            list += new Date(parseInt(millis)).toLocaleString('en-GB', { hour12: true }).toUpperCase();
             list += '\n\n';
             names.forEach(name => {
                 list += name + '\n';
