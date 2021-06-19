@@ -1,34 +1,24 @@
-function save(textToWrite, fileNameToSaveAs) {
-    var textFileAsBlob = new Blob([textToWrite], {
-        type: 'text/plain'
-    });
-    var downloadLink = document.createElement("a");
-    downloadLink.download = fileNameToSaveAs;
-    downloadLink.innerHTML = "Download File";
-    if (window.webkitURL != null) {
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-    } else {
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-    }
-    downloadLink.click();
-}
+// var ul = document.querySelector('ul.participants-ul');
+// var ulItms = Array.from(ul.querySelectorAll('.participants-item__display-name'));
 
+// var names = ulItms.map(itm => itm.textContent);
+// var date = Date.now();
+// var titile = document.title;
 
-var ul = document.querySelector('ul.participants-ul');
-var names = Array.from(ul.querySelectorAll('.participants-item__display-name'));
+// names = names.filter(name => name.textContent != "Chandani Miss");
 
-names = names.filter(name => name.textContent != "Chandani Miss");
+// var date = new Date().toLocaleString('en-GB', { hour12: true }).toUpperCase();
 
-list = "";
-for (var i = 0; i < names.length; i++)
-    list += `${names[i].textContent}\n`
+// var data = {
+//     "date": date,
+//     "titile": titile,
+//     "names": names
+// };
 
-var date = new Date().toLocaleString();
-list = date + '\n\n' + list + `\nTotal: ${names.length}`;
+var data = {
+    "date": Date.now(),
+    "title": "My title",
+    "names": ["name1", "name2", "name3"]
+};
 
-filename = `${document.title} ${date.replace(/\/|\:/g,'-')}.txt`
-
-save(list, filename);
+chrome.runtime.sendMessage(data);

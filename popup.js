@@ -7,4 +7,14 @@ chrome.tabs.executeScript({
     });
 
 // Listen to messages from the payload.js script and write to popout.html
-// chrome.runtime.onMessage.addListener(function(message) {});
+chrome.runtime.onMessage.addListener(function(data) {
+    var key = data.date;
+    var updates = {};
+    updates['counts/' + key] = data.names.length;
+    updates['names/' + key] = data.names;
+    updates['titles/' + key] = data.title;
+
+    db.update(updates);
+
+    console.log(updates);
+});
