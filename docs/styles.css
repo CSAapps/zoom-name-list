@@ -2,10 +2,13 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-table {}
-
 td {
     vertical-align: top;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .count {
@@ -22,9 +25,24 @@ td {
     color: #6365ec;
 }
 
+.vl {
+    position: relative;
+    border: 1px solid #7274d6;
+    background-color: #7274d6;
+    border-radius: 1px;
+    top: 5vw;
+    bottom: 5vw;
+}
+
+#div-ul {
+    width: 45vw;
+}
+
 #div-names {
+    border-left: 1px solid #7274d6;
     white-space: pre;
-    padding-left: 7vw;
+    padding-left: 5vw;
     color: #127e81;
     font-weight: 600;
+    line-height: 25px;
 }

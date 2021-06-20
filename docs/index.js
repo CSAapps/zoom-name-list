@@ -32,7 +32,7 @@ function showList() {
             let li = document.createElement('li');
             li.innerHTML =
                 `<td class="time">${time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\
-                 </td>&nbsp;|&nbsp;\
+                 </td>&nbsp;:&nbsp;\
                  <span class="count">${counts[millis]}</span>`;
 
             li.millis = millis;
@@ -56,8 +56,8 @@ function loadNames(millis) {
             let list = '\n';
             list += new Date(parseInt(millis)).toLocaleString('en-GB', { hour12: true }).toUpperCase();
             list += '\n\n';
-            names.forEach(name => {
-                list += name + '\n';
+            names.forEach((name, i) => {
+                list += `${(i+1+'').padStart(2, ' ')}. ${name}\n`;
             })
             list += '\nTotal: ' + names.length;
             divNames.textContent = list;

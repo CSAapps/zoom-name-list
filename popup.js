@@ -7,7 +7,7 @@ chrome.tabs.executeScript({
     });
 
 // Listen to messages from the payload.js script and write to popout.html
-chrome.runtime.onMessage.addListener(function(data) {
+chrome.runtime.onMessage.addListener(function(data, sender, callback) {
     var key = data.date;
     var updates = {};
     updates['counts/' + key] = data.names.length;
@@ -15,12 +15,10 @@ chrome.runtime.onMessage.addListener(function(data) {
     // updates['titles/' + key] = data.title;
 
     db.update(updates, (error) => {
-        if (error) {
-            console.log(error)
-        } else {
-            console.log("saved");
-        }
+        if (error)
+            callback({ state: 0, msg: JSON.stringify(error) });
+        else
+            callback({ state: 1, msg: "Saved" });
     });
-
-    console.log(updates);
+    return true;
 });
