@@ -35,13 +35,13 @@ li {
 }
 
 #div-ul {
-    width: 45vw;
+    width: 250px;
 }
 
 #div-names {
     border-left: 1px solid #7274d6;
     white-space: pre;
-    padding-left: 5vw;
+    padding-left: 30px;
     color: #127e81;
     font-weight: 600;
     line-height: 25px;
