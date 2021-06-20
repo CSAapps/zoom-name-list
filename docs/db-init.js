@@ -9,4 +9,4 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-var db = firebase.database().ref('zoom-name-list');
+var db = firebase.database().ref('zoom-namelist');
