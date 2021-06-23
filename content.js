@@ -23,7 +23,7 @@ var names = ulItms.map(itm => itm.textContent);
 var date = Date.now();
 var titile = document.title;
 
-names = names.filter(name => name.textContent != "Chandani Miss");
+names = names.filter(name => name != "Chandani Miss");
 
 var data = {
     "date": date,
