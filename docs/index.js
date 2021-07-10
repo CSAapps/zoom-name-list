@@ -18,8 +18,20 @@ function fillDates() {
 
 function showList() {
     var datesArr = Object.keys(dates);
-    datesArr.sort();
-    datesArr.reverse();
+    datesArr.sort((d1, d2) => {
+        d1 = d1.split('/');
+        d1.reverse();
+        d1 = d1.join('');
+
+        d2 = d2.split('/');
+        d2.reverse();
+        d2 = d2.join('');
+
+        if (d1 > d2) return -1;
+        if (d1 < d2) return 1;
+        return 0;
+    });
+
     datesArr.forEach(date => {
         let liDate = document.createElement('li');
         liDate.className = 'date';
